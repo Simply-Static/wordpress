@@ -33,13 +33,15 @@ php /app/wp-cli.phar --allow-root --path=/app \
   media import "https://i0.wp.com/learn.wordpress.org/files/2023/08/WordPress-logotype-simplified.png" --porcelain | \
   php /app/wp-cli.phar --allow-root --path=/app option update site_icon || true
 
-echo "Installing theme..."
+echo "Installing theme and plugins..."
 
 php /app/wp-cli.phar \
   --allow-root \
   --path=/app \
   wasmer-aio-install install \
   --locale="$WP_LOCALE" \
-  --theme=/app/install/twentytwentyfive.zip || true
+  --theme=/app/install/ollie.zip || true
+  --plugin=/app/install/simply-static.zip || true
+  --plugin=/app/install/simply-static-pro.zip || true
 
 echo "Installation complete"
