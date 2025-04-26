@@ -19,14 +19,14 @@ jobs:
 # Currently disabled because it causes redundant instances to stay alive for
 # minutes.
 # - name: wp-cron
-#   trigger: '*/15 * * * *'
+#   trigger: '*/5 * * * *'
 #   action:
 #     fetch:
 #       path: /wp-cron.php
 #       timeout: '10m'
 # Invoke cron with a separate instance.
 - name: wp-cron
-  trigger: '*/15 * * * *'
+  trigger: '*/5 * * * *'
   action:
     execute:
       package: "php/php-eh@=8.3.404-beta.4"
