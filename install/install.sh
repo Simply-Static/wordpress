@@ -66,8 +66,8 @@ echo "Install and activate Ollie theme."
 php /app/wp-cli.phar --allow-root --path=/app theme install ollie --activate;
 
 echo "Installing MU plugin".
-php /app/wp-cli.phar --allow-root --path=/app plugin install https://api.static.studio/storage/v1/object/public/plugins/simply-static-studio-helper.zip;
-mv /app/wp-content/plugins/simply-static-studio-helper/ /app/wp-content/mu-plugins/
 curl -L https://api.static.studio/storage/v1/object/public/plugins/load.php -o /app/wp-content/mu-plugins/load.php;
+curl -L https://api.static.studio/storage/v1/object/public/plugins/simply-static-studio-helper.zip -o /app/wp-content/mu-plugins/simply-static-studio-helper.zip;
+unzip /app/wp-content/mu-plugins/simply-static-studio-helper.zip
 
 echo "Installation complete"
