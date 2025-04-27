@@ -20,6 +20,6 @@ if (defined('WP_CLI') && WP_CLI) {
 require_once __DIR__ . '/wasmer/wasmer.php';
 
 // Simply Static Studio Helper.
-require_once  __DIR__ . '/wasmer/simply-static-studio-helper/simply-static-studio-helper.php';
+require_once  __DIR__ . '/simply-static-studio-helper/simply-static-studio-helper.php';
 
 // require_once __DIR__ . '/hostinger/hostinger.php';
