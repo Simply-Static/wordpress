@@ -20,11 +20,6 @@ class Wasmer_Aio_Install_Command
         WP_CLI::line('Running: ' . $command);
         WP_CLI::runcommand($command, ['launch' => false]);
 
-	    WP_CLI::line('Installing Simply Static');
-	    $command = 'plugin install ' . $assoc_args['plugin'];
-	    WP_CLI::line('Running: ' . $command);
-	    WP_CLI::runcommand($command, ['launch' => false]);
-
         WP_CLI::line('Installing language');
         $command = 'language core install --activate ' . $assoc_args['locale'];
         WP_CLI::line('Running: ' . $command);
