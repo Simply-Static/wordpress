@@ -56,14 +56,18 @@ php /app/wp-cli.phar \
   --path=/app \
   wasmer-aio-install install \
   --locale="$WP_LOCALE" \
-  --theme=/app/install/ollie.zip || true
+   --theme=/app/install/twentytwentyfive.zip || true
 
 echo "Installing Simply Static and Simply Static Pro"
 php /app/wp-cli.phar --allow-root --path=/app plugin install simply-static --activate;
-php /app/wp-cli.phar --allow-root --path=/app plugin install /app/install/simply-static-pro.zip --activate;
+php /app/wp-cli.phar --allow-root --path=/app plugin install https://api.static.studio/storage/v1/object/public/plugins/simply-static-pro.zip --activate;
+
+echo "Install and activate Ollie theme."
+php /app/wp-cli.phar --allow-root --path=/app theme install ollie --activate;
 
 echo "Installing MU plugin".
-php /app/wp-cli.phar --allow-root --path=/app plugin install /app/install/simply-static-studio-helper.zip;
-
+php /app/wp-cli.phar --allow-root --path=/app plugin install https://api.static.studio/storage/v1/object/public/plugins/simply-static-studio-helper.zip;
+mv /app/wp-content/plugins/simply-static-studio-helper/ /app/wp-content/mu-plugins/
+curl -L https://api.static.studio/storage/v1/object/public/plugins/load.php -o /app/wp-content/mu-plugins/load.php;
 
 echo "Installation complete"
