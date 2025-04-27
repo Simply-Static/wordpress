@@ -60,7 +60,7 @@ php /app/wp-cli.phar \
 
 echo "Installing Simply Static and Simply Static Pro"
 php /app/wp-cli.phar --allow-root --path=/app plugin install simply-static --activate;
-php /app/wp-cli.phar --allow-root --path=/app plugin install /app/install/simply-static-pro.zip --activate;
+# php /app/wp-cli.phar --allow-root --path=/app plugin install https://api.static.studio/storage/v1/object/public/plugins/simply-static-pro.zip --activate;
 
 echo "Install and activate Ollie theme."
 php /app/wp-cli.phar --allow-root --path=/app theme install ollie --activate;
