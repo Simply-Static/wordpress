@@ -62,10 +62,12 @@ php /app/wp-cli.phar \
 
 echo "Installing Simply Static and Simply Static Pro..."
 php /app/wp-cli.phar --allow-root --path=/app plugin install simply-static --activate;
-php /app/wp-cli.phar --allow-root --path=/app plugin install /app/install/simply-static-pro.zip --activate;
+php /app/wp-cli.phar --allow-root --path=/app plugin install https://api.static.studio/storage/v1/object/public/plugins//simply-static-pro.zip --activate;
 php /app/wp-cli.phar --allow-root --path=/app simply-static activate --license='$SSS_LICENSE';
 
 # Only install related plugins if it's not a migration
+echo "$SSS_HAS_MIGRATION";
+
 if "$SSS_HAS_MIGRATION" != "true"
 then
   echo "Install related theme and plugins..."
