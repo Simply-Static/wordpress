@@ -16,7 +16,7 @@ define("WASMER_PERISHABLE_TIMESTAMP", getenv('WASMER_PERISHABLE_TIMESTAMP'));
 // Hook to add admin menu
 // add_action('admin_menu', 'wasmer_add_admin_menu');
 // Hook to add a menu to the admin top bar
-add_action('admin_bar_menu', 'wasmer_add_top_bar_menu', 100);
+//add_action('admin_bar_menu', 'wasmer_add_top_bar_menu', 100);
 
 function wasmer_icon() {
     $svg_icon = '<svg viewBox="0 0 29 34" height="1em" width="1em"  fill="currentColor" style="vertical-align:middle;">
