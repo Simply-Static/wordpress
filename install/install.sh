@@ -61,8 +61,8 @@ php /app/wp-cli.phar \
 
 echo "Installing Simply Static and Simply Static Pro..."
 php /app/wp-cli.phar --allow-root --path=/app plugin install simply-static --activate;
-php /app/wp-cli.phar --allow-root --path=/app plugin install /app/install/simply-static-pro.zip --activate;
-php /app/wp-cli.phar --allow-root --path=/app simply-static activate --license='$SSS_LICENSE';
+# php /app/wp-cli.phar --allow-root --path=/app plugin install /app/install/simply-static-pro.zip --activate;
+# php /app/wp-cli.phar --allow-root --path=/app simply-static activate --license='$SSS_LICENSE';
 
 echo "Move MU plugin files...".
 mv /app/install/simply-static-studio-helper/ /app/wp-content/mu-plugins/
