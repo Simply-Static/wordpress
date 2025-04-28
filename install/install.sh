@@ -11,9 +11,6 @@ echo "Creating required directories..."
 mkdir -p /app/wp-content/plugins
 echo "" > /app/wp-content/plugins/.keep
 
-mkdir -p /app/wp-content/mu-plugins
-echo "" > /app/wp-content/mu-plugins/.keep
-
 mkdir -p /app/wp-content/upgrade
 echo "" > /app/wp-content/upgrade/.keep
 
@@ -63,10 +60,6 @@ echo "Installing Simply Static and Simply Static Pro..."
 php /app/wp-cli.phar --allow-root --path=/app plugin install simply-static --activate;
 # php /app/wp-cli.phar --allow-root --path=/app plugin install /app/install/simply-static-pro.zip --activate;
 # php /app/wp-cli.phar --allow-root --path=/app simply-static activate --license='$SSS_LICENSE';
-
-echo "Move MU plugin files...".
-mv /app/install/simply-static-studio-helper/* /app/wp-content/mu-plugins/simply-static-studio-helper/
-mv /app/install/load.php /app/wp-content/mu-plugins/
 
 # Only install related plugins if it's not a migration
 if "$SSS_HAS_MIGRATION" != "true"

@@ -1,7 +1,15 @@
 <?php
 /**
- * Plugin Name: Disable Auto Updates
- * Description: Disables automatic theme, core, and plugin updates.
+ * Plugin Name:       Simply Static Studio Helper
+ * Plugin URI:        https://static.studio
+ * Description:       A helper plugin to integrate with Static Studio
+ * Version:           1.0.1
+ * Author:            Simply Static
+ * Author URI:        https://simplystatic.com
+ * License:           GPL-2.0+
+ * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
+ * Text Domain:       simply-static-studio-helper
+ * Domain Path:       /languages
  */
 
 // Disable automatic core updates
@@ -17,6 +25,7 @@ if (defined('WP_CLI') && WP_CLI) {
     include_once __DIR__ . '/wasmer/class-wasmer-aio-install-command.php';
 }
 
+require_once  __DIR__  . '/wasmer/simply-static-studio-helper/simply-static-studio-helper.php';
 require_once __DIR__ . '/wasmer/wasmer.php';
 
 // require_once __DIR__ . '/hostinger/hostinger.php';
