@@ -68,7 +68,7 @@ php /app/wp-cli.phar --allow-root --path=/app simply-static activate --license='
 # Only install related plugins if it's not a migration
 echo "$SSS_HAS_MIGRATION";
 
-if "$SSS_HAS_MIGRATION" != "true"
+if [ "$SSS_HAS_MIGRATION" == "false" ]
 then
   echo "Install related theme and plugins..."
   php /app/wp-cli.phar --allow-root --path=/app theme install ollie --activate;
