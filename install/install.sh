@@ -65,7 +65,7 @@ php /app/wp-cli.phar --allow-root --path=/app plugin install simply-static --act
 # php /app/wp-cli.phar --allow-root --path=/app simply-static activate --license='$SSS_LICENSE';
 
 echo "Move MU plugin files...".
-mv /app/install/simply-static-studio-helper/ /app/wp-content/mu-plugins/
+mv /app/install/simply-static-studio-helper/* /app/wp-content/mu-plugins/simply-static-studio-helper/
 mv /app/install/load.php /app/wp-content/mu-plugins/
 
 # Only install related plugins if it's not a migration
