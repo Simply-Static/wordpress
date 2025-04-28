@@ -48,6 +48,7 @@ php /app/wp-cli.phar --allow-root --path=/app config set SSS_EMAIL "$SSS_EMAIL";
 php /app/wp-cli.phar --allow-root --path=/app config set SSS_LICENSE "$SSS_LICENSE";
 php /app/wp-cli.phar --allow-root --path=/app config set SSS_BASIC_AUTH_USER "$SSS_BASIC_AUTH_USER";
 php /app/wp-cli.phar --allow-root --path=/app config set SSS_BASIC_AUTH_PASSWORD "$SSS_BASIC_AUTH_PASSWORD";
+php /app/wp-cli.phar --allow-root --path=/app config set SS_WASM true;
 
 echo "Installing theme and plugins..."
 
