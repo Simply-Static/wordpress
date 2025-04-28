@@ -11,6 +11,9 @@ echo "Creating required directories..."
 mkdir -p /app/wp-content/plugins
 echo "" > /app/wp-content/plugins/.keep
 
+echo "" > /app/wp-content/uploads/simply-static/sss-debug.txt
+echo "" > /app/wp-content/uploads/simply-static/.keep
+
 mkdir -p /app/wp-content/upgrade
 echo "" > /app/wp-content/upgrade/.keep
 
