@@ -32,6 +32,11 @@ function sss_rrm_dir( string $src ): void {
 function sss_detect_form_plugin() {
 	$plugins = get_option( 'active_plugins' );
 
+	// Exit early if not set.
+	if ( empty( $plugins ) ) {
+		return 'wpforms';
+	}
+
 	if ( in_array( 'contact-form-7/wp-contact-form-7.php', $plugins, true ) ) {
 		return 'cf7';
 	}
