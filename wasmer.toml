@@ -29,17 +29,17 @@ main-args = [
   "-S",
   "localhost:8080",
   "-d",
-  "memory_limit=512M",
+  "memory_limit=256M",
   "-d",
-  "max_execution_time=2400",
+  "max_execution_time=1200",
   "-d",
-  "max_input_time=2400",
+  "max_input_time=1200",
   "-d",
-  "max_input_vars=16384",
+  "max_input_vars=8192",
   "-d",
-  "upload_max_filesize=16384M",
+  "upload_max_filesize=4096M",
   "-d",
-  "post_max_size=16384M",
+  "post_max_size=4096M",
 ]
 
 [[command]]
