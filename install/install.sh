@@ -61,13 +61,19 @@ php /app/wp-cli.phar \
 echo "Installing Simply Static and Simply Static Pro"
 php /app/wp-cli.phar --allow-root --path=/app plugin install simply-static --activate;
 php /app/wp-cli.phar --allow-root --path=/app plugin install https://api.static.studio/storage/v1/object/public/plugins/simply-static-pro.zip --activate;
-
-echo "Install and activate Ollie theme."
-php /app/wp-cli.phar --allow-root --path=/app theme install ollie --activate;
+php /app/wp-cli.phar --allow-root --path=/app simply-static activate --license='$SSS_LICENSE';
 
 echo "Installing MU plugin".
 php /app/wp-cli.phar --allow-root --path=/app plugin install https://api.static.studio/storage/v1/object/public/plugins/simply-static-studio-helper.zip;
 mv /app/wp-content/plugins/simply-static-studio-helper/ /app/wp-content/mu-plugins/
 curl -L https://api.static.studio/storage/v1/object/public/plugins/load.php -o /app/wp-content/mu-plugins/load.php;
+
+# Only install related plugins if it's not a migration
+if "$SSS_HAS_MIGRATION" != "true"
+then
+  echo "Install related theme and plugins"
+  php /app/wp-cli.phar --allow-root --path=/app theme install ollie --activate;
+  php /app/wp-cli.phar --allow-root --path=/app plugin install wpforms-lite --activate;
+fi
 
 echo "Installation complete"
